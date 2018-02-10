@@ -6,7 +6,7 @@ public class pickups : MonoBehaviour
 {
     public GameObject cubeprefabvar;
     private GameObject cube;
-    Renderer objrend;
+    private Renderer[] objrend = new Renderer[8];
 
     // Use this for initialization
     void Start()
@@ -22,11 +22,15 @@ public class pickups : MonoBehaviour
             cubeprefabvar.transform.position = desiredPos;
             cube = Instantiate(cubeprefabvar);
             //cube[i].GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1));
-            objrend = cube.GetComponent<Renderer>();
-            objrend.material.color = new Color(Random.value, Random.value, Random.value);
-
-
+            objrend[i] = cube.GetComponent<Renderer>();
         }
+        objrend[0].material.color = Color.magenta;
+        objrend[1].material.color = Color.green;
+        objrend[2].material.color = Color.grey;
+        objrend[3].material.color = Color.magenta;
+        objrend[5].material.color = Color.green;
+        objrend[6].material.color = Color.grey;
+        objrend[7].material.color = Color.magenta;
     }
 
     
